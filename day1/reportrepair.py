@@ -17,16 +17,23 @@ for i in range(0, l):
    print("{0} + {1} = 2020".format(report_data[i], report_data[j]))
    print("{0} * {1} = {2}".format(report_data[i], report_data[j], report_data[i] * report_data[j]))
 
-# part1 answer
-# 976 + 1044 = 2020
-# 976 * 1044 = 1018944
-
 print("part2")
 
-#do this the inefficient way
-for i in report_data:
- for j in report_data:
-  for k in report_data:
-   if i + j + k == 2020:
-    print("{0} + {1} + {2} = 2020".format(i, j, k))
-    print("{0} * {1} * {2} = {3}".format(i, j, k, i * j * k))
+i = 0
+
+# same algorithm for part1 one just in 3d
+for i in range(0, l):
+ j = i + 1
+ for j in range(j, l):
+  k = j + 1
+  for k in range(k, l):
+   if report_data[i] + report_data[j] + report_data[k] == 2020:
+    print("{0} + {1} + {2} = 2020".format(report_data[i], report_data[j], report_data[k]))
+    print("{0} * {1} * {2} = {3}".format(report_data[i], report_data[j], report_data[k], report_data[i] * report_data[j] * report_data[k]))
+
+# part1
+# 976 + 1044 = 2020
+# 976 * 1044 = 1018944
+# part2
+# 1692 + 312 + 16 = 2020
+# 1692 * 312 * 16 = 8446464
