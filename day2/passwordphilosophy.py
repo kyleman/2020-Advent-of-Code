@@ -10,7 +10,6 @@ for pw in password_list:
  char = scheme[1].strip(":")
  occurences = scheme[2].count(char)
  if occurences >= min and occurences <= max:
-  print(pw)
   correct_password_count += 1
 
 print("{0} valid sled shop passwords.".format(correct_password_count))
@@ -25,7 +24,6 @@ for pw in password_list:
  pwd = scheme[2]
  if pwd[first] != pwd[second]:
   if pwd[first] == char or pwd[second] == char:
-   print(pw)
    correct_password_count += 1
 
 print("{0} valid toboggan shop passwords.".format(correct_password_count))
