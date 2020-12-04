@@ -20,8 +20,12 @@ def validateIssueYear(iyr: str) -> bool:
    valid = True
  return valid
 
-def validateExpriationYear(eyl: str) -> bool:
+def validateExpirationYear(eyr: str) -> bool:
  valid: bool = False
+ if eyr.isnumeric() and len(eyr) >= 4:
+  expirationyear = int(eyr)
+  if expirationyear >= 2020 and expirationyear <= 2030:
+   valid = True
  return valid
 
 def validateheight(hgt: str) -> bool:
@@ -54,6 +58,10 @@ def validatePassport(passport) -> bool:
      break
    if field == "iyr":
     if not validateIssueYear(passport[field]):
+     success = False
+     break
+   if field == "eyr":
+    if not validateExpirationYear(passport[field]):
      success = False
      break
  return success
