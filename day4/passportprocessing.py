@@ -1,5 +1,6 @@
 from collections import defaultdict
 from copy import deepcopy
+import re
 
 valid_passports = 0
 passports = []
@@ -42,11 +43,14 @@ def validateHeight(hgt: str) -> bool:
 
 def validateHairColor(hcl: str) -> bool:
  valid: bool = False
+ hexnumber = re.compile("#[a-f0-9]{6}")
+ if hexnumber.search(hcl):
+  valid = True
  return valid
 
 def validateEyeColor(ecl: str) -> bool:
  valid: bool = False
- colors = ["amb, "blu", "brn", "gry", "grn", "hzl", "oth"]
+ colors = ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"]
  if ecl in colors:
   valid = True
  return valid
