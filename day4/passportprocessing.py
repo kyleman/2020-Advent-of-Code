@@ -42,6 +42,8 @@ def validateEyeColor(ecl: str) -> bool:
 
 def validatePassportID(pid: str) -> bool:
  valid: bool = False
+ if pid.isnumeric() and len(pid) == 9:
+  valid = True
  return valid
 
 def validatePassport(passport) -> bool:
