@@ -30,6 +30,14 @@ def validateExpirationYear(eyr: str) -> bool:
 
 def validateHeight(hgt: str) -> bool:
  valid: bool = False
+ if hgt.endswith("in"):
+  measure = int(hgt.strip("in"))
+  if measure >= 59 and measure <= 76:
+   valid = True
+ elif hgt.endswith("cm"):
+  measure = int(hgt.strip("cm"))
+  if measure >= 150 and measure <= 193:
+   valid = True
  return valid
 
 def validateHairColor(hcl: str) -> bool:
