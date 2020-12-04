@@ -64,6 +64,22 @@ def validatePassport(passport) -> bool:
     if not validateExpirationYear(passport[field]):
      success = False
      break
+   if field == "hgt":
+    if not validateHeight(passport[field]):
+     success = False
+     break
+   if field == "hcl":
+    if not validateHairColor(passport[field]):
+     success = False
+     break
+   if field == "ecl":
+    if not validateEyeColor(passport[field]):
+     success = False
+     break
+   if field == "pid":
+    if not validatePassportID(passport[field]):
+     success = False
+     break
  return success
 
 with open("data.txt", "r") as data:
