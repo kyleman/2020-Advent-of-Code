@@ -14,6 +14,10 @@ def validateBirthYear(byr:str) -> bool:
 
 def validateIssueYear(iyr: str) -> bool:
  valid: bool = False
+ if iyr.isnumeric() and len(iyr) >= 4:
+  issueyear = int(iyr)
+  if issueyear >= 2010 and issueyear <= 2020:
+   valid = True
  return valid
 
 def validateExpriationYear(eyl: str) -> bool:
@@ -46,6 +50,10 @@ def validatePassport(passport) -> bool:
   else:
    if field == "byr":
     if not validateBirthYear(passport[field]):
+     success = False
+     break
+   if field == "iyr":
+    if not validateIssueYear(passport[field]):
      success = False
      break
  return success
