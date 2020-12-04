@@ -46,6 +46,9 @@ def validateHairColor(hcl: str) -> bool:
 
 def validateEyeColor(ecl: str) -> bool:
  valid: bool = False
+ colors = ["amb, "blu", "brn", "gry", "grn", "hzl", "oth"]
+ if ecl in colors:
+  valid = True
  return valid
 
 def validatePassportID(pid: str) -> bool:
