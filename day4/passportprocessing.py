@@ -114,3 +114,6 @@ for passport in passport_list:
   valid_passports += 1
 
 print("{0} valid passports of {1} total passports".format(valid_passports, len(passports)))
+
+#part 1: 190 valid passports of 254 total passports
+# part2: 121 valid passports of 254 total passports
