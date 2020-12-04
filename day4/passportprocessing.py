@@ -28,7 +28,7 @@ def validateExpirationYear(eyr: str) -> bool:
    valid = True
  return valid
 
-def validateheight(hgt: str) -> bool:
+def validateHeight(hgt: str) -> bool:
  valid: bool = False
  return valid
 
