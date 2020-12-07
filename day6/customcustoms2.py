@@ -2,6 +2,7 @@ def getIntersection(group: [set]) -> set:
  intersection = group[0]
  for g in group:
   intersection = intersection.intersection(g)
+  
  return intersection
 
 with open("questions.txt", "r") as questions:
